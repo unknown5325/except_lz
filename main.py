@@ -1,0 +1,2 @@
+import exc
+exc.main()
