@@ -51,18 +51,15 @@ def main():
                             print(i)
                         
                         for i in err_type:
-                            print(i)
-                    
+                            print(i)   
             except FileNotFoundError:
                 print(f"Возникла следующая ошибка: [Errno 2] No such file or directory: {self.coll_1} or {self.coll_2}")
-
             except StopIteration:
                 print('Возникла следующая ошибка: Первый файл оказалс пустым.')
-
             except TypeError:
                 print('Возникла следующая ошибка: Второй файл оказался пустым.')
-
-            print('Чтение датафрейма завершено успешно')
+            if first_str1 == first_str2 and types_a == types_b:
+                print('Чтение датафрейма завершено успешно')
 
 
         def __del__(self):
