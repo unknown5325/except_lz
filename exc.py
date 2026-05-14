@@ -9,12 +9,11 @@ def main():
         @property
         def check(self):
             try:
-                with open('var7.csv', 'r') as file:
-                    types_a = []
-                    types_b = []
-                    err_type = []
-                    err = []
                     with open(self.coll_1, 'r', encoding='utf-8-sig') as file_1, open(self.coll_2, 'r', encoding='utf-8-sig' ) as file_2:
+                        types_a = []
+                        types_b = []
+                        err_type = []
+                        err = []
                         csv_str1 = csv.reader(file_1)
                         csv_str2 = csv.reader(file_2)
                         first_str1 = next(csv_str1, None)
