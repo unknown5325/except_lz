@@ -14,7 +14,7 @@ def main():
                     types_b = []
                     err_type = []
                     err = []
-                    with open(self.coll_1, 'r', encoding='utf-8-sig') as file_1, open(self.coll_2, 'r', encoding='utf-8' ) as file_2:
+                    with open(self.coll_1, 'r', encoding='utf-8-sig') as file_1, open(self.coll_2, 'r', encoding='utf-8-sig' ) as file_2:
                         csv_str1 = csv.reader(file_1)
                         csv_str2 = csv.reader(file_2)
                         first_str1 = next(csv_str1, None)
@@ -51,21 +51,22 @@ def main():
                             print(i)
                         
                         for i in err_type:
-                            print(i)   
+                            print(i)
+                        if first_str1 == first_str2 and types_a == types_b:
+                                print('Чтение датафрейма завершено успешно')   
             except FileNotFoundError:
                 print(f"Возникла следующая ошибка: [Errno 2] No such file or directory: {self.coll_1} or {self.coll_2}")
             except StopIteration:
-                print('Возникла следующая ошибка: Первый файл оказалс пустым.')
+                print('Возникла следующая ошибка: Первый файл оказался пустым.')
             except TypeError:
                 print('Возникла следующая ошибка: Второй файл оказался пустым.')
-            if first_str1 == first_str2 and types_a == types_b:
-                print('Чтение датафрейма завершено успешно')
-
+            except UnboundLocalError:
+                print('Возникла ошибка')
 
         def __del__(self):
-            print('')
+            print('Удаление прошло успешно')
 
-    prov = Error('var7.csv', 'var1.csv').check
+    prov = Error('var3.csv', 'var1.csv').check
     return prov
 
 
